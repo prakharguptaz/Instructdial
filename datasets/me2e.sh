@@ -1,0 +1,2 @@
+wget -P ./me2e https://raw.githubusercontent.com/xiul-msr/e2e_dialog_challenge/master/data/movie_all.tsv
+wget -P ./me2e https://raw.githubusercontent.com/xiul-msr/e2e_dialog_challenge/master/data/restaurant_all.tsv

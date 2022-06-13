@@ -1,0 +1,16 @@
+pytorch
+tokenizers
+datasets
+deepspeed
+tensorboard
+checklist==0.0.11
+jsonlines
+pandas
+openpyxl
+xlrd==1.2.0
+parlai
+git+https://github.com/Maluuba/nlg-eval.git@master
+tensorflow==2.6.2
+scikit-learn==0.21.3
+rouge_score
+wandb

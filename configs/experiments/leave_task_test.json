@@ -1,0 +1,20 @@
+{
+  "task-files": [
+    "relation_classification",
+    "dialfact_classification",
+    "eval_ranking",
+    "answer_selection",
+    "beginswith_controlled_generation",
+    "knowledge_grounded_generation"
+  ],
+  "left-out-tasks":[
+    "eval_binary",
+    "eval_rating",    
+    "relation_present",
+    "gensf_slot_tagging",
+    "find_swapped_utterance",
+    "belief",
+    "twomore"
+  ]
+}
+

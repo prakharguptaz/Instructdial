@@ -1,0 +1,1 @@
+wget -P ./reddit_advice https://storage.googleapis.com/turingadvice/redditadvice2019.jsonl

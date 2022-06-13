@@ -1,0 +1,7 @@
+{
+  "task-files": [
+    "eval_binary",
+    "eval_ranking",
+    "eval_rating"
+  ]
+}

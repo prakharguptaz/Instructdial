@@ -1,0 +1,49 @@
+{
+  "task-files": [
+    "intent_present",
+    "intent_classification",
+    "act_classification",
+    "act_generation",
+    "advice_generation",
+    "advice_present",
+    "count_response_words",
+    "db_based_generation",
+    "deal_present",
+    "edit_generation",
+    "emotion_tagging",
+    "emotion_generation",
+    "endswith_controlled_generation",
+    "document_grounded_generation",
+    "find_missing_utterance",
+    "find_incoherent_utterance",
+    "graph_based_generation",
+    "keyword_controlled_generation",
+    "nli_classification",
+    "answer_generation",
+    "persona_grounded_generation",
+    "persuasion_generation",
+    "persuasion_present",
+    "persuasion_strategy",
+    "question_generation",
+    "recovery_generation",
+    "nontoxic_feedback_generation",
+    "response_generation",
+    "response_generation_with_n_words",
+    "schema_based_generation",
+    "fill_missing_utterance",
+    "summarization",
+    "slot_present",
+    "slot_value_generation",
+    "toxic_classification",
+    "target_controlled_generation"
+  ],
+  "datasets_excluded":[
+    "intent-banking"
+  ],
+  "task_datasets_details":{
+    "intent_classification":{
+      "datasets-excluded":["intent-banking"]
+    }
+  }
+}
+

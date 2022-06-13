@@ -1,0 +1,1 @@
+wget -P ./opendialkg https://raw.githubusercontent.com/facebookresearch/opendialkg/main/data/opendialkg.csv

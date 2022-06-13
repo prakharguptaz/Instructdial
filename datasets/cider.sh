@@ -1,0 +1,1 @@
+wget -P ./cider https://raw.githubusercontent.com/declare-lab/CIDER/main/data/cider_main.json
