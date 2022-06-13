@@ -5,15 +5,15 @@ Code for the paper Code for the paper InstructDial: Improving Zero and Few-shot 
 ## Overview
 Instruction tuning is an emergent paradigm in NLP wherein natural language instructions are leveraged with language models to induce zero-shot performance on unseen tasks. Instructions have been shown to enable good performance on unseen tasks and datasets in both large and small language models. Dialogue is an especially interesting area to explore instruction tuning because dialogue systems perform multiple kinds of tasks related to language (e.g., natural language understanding and generation, domain-specific interaction), yet instruction tuning has not been systematically explored for dialogue-related tasks. We introduce InstructDial, an instruction tuning framework for dialogue, which consists of a repository of 48 diverse dialogue tasks in a unified text-to-text format created from 59 openly available dialogue datasets. Next, we explore cross-task generalization ability on models tuned on InstructDial across diverse dialogue tasks. Our analysis reveals that InstructDial enables good zero-shot performance on unseen datasets and tasks such as dialogue evaluation and intent detection, and even better performance in a few-shot setting. To ensure that models adhere to instructions, we introduce novel meta-tasks. We establish benchmark zero-shot and few-shot performance of models trained using the proposed framework on multiple dialogue tasks.
 
-![Intro figure](/images/intro.jpg?raw=true "Intro-figure")
-
+<img src="/images/intro.jpg" width="100" height="150">
 
 ### InstructDial Description
 InstructDial contains a collection of dialogue datasets transformed into one or more into dialogue tasks. For every dataset, there exist a bash script in the ```datasets``` folder that downloads and extracts the dataset from open sources, along with a dataset reader script in the ```data_utils``` folder that formats the raw dataset into a format that makes it possible to plug in the dataset into a new task. Each dialogue task (such as keywood based response generation) can use one or more dialogue datasets. The config for each task is specified through a json file (example file ```configs\config_tasks1```). The config file contains the list of datasets included in the task, along with some hyperparameters. Finally, the instances from the tasks are converted into seq2seq format for tuning a language model. This procedure is shown in the figure below. We describe each step in more detail below.
 
 Note: We are open to incorporating new datasets and tasks in this repo on request (through github issues). Otherwise, one can fork this repo and add new tsks in their private repo.
 
-![Instructial description](/images/intstructdialoverview.jpg?raw=true "procedure-figure")
+<img src="/images/intro.jpg" width="150" height="150">
+
 
 
 
