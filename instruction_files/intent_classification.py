@@ -20,7 +20,7 @@ instruction_dict = {
                     "You will be given some dialogue text and you need to classify the intent of the text.",
                     "Given a response, classify the intent of the response.",
                     "Select the correct intent of the given text from a list of options.",
-                    ]
+                    ],
     "Positive Examples": [
         {
             "input": "[RESPONSE] Make a reservation for 4 people for today's lunch at Daniel [ENDOFDIALOGUE]. The possible intents are: [OPTIONS] BookRestaurant||||ShareETA||||ShareCurrentLocation||||GetDirections||||GetWeather||||GetPlaceDetails||||RequestRide||||ComparePlaces||||SearchPlace||||GetTrafficInformation [QUESTION] The best option among the provided intent is",
