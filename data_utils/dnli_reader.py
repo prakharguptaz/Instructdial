@@ -41,17 +41,17 @@ class DNLIDataset(Dataset):
         self.name = 'dnli'
 
         if split == 'train':
-            data = json.load(open('./datasets/dialogue_nli/dnli/dialogue_nli/dialogue_nli_train.jsonl'))
+            data = json.load(open('./datasets/dnli/dialogue_nli/dialogue_nli_train.jsonl'))
             self.examples+=data
             # data = json.load(open('./datasets/dialogue_nli/dnli/dialogue_nli_extra/repaired_train.json'))
             # self.examples+=data
         if split == 'dev':
-            data = json.load(open('./datasets/dialogue_nli/dnli/dialogue_nli/dialogue_nli_dev.jsonl'))
+            data = json.load(open('./datasets/dnli/dialogue_nli/dialogue_nli_dev.jsonl'))
             self.examples+=data
             # data = json.load(open('./datasets/dialogue_nli/dnli/dialogue_nli_extra/dialogue_nli_EXTRA_uu_test.jsonl'))
             # self.examples+=data
         if split == 'test':
-            data = json.load(open('./datasets/dialogue_nli/dnli/dialogue_nli/dialogue_nli_verified_test.jsonl'))
+            data = json.load(open('./datasets/dnli/dialogue_nli/dialogue_nli_verified_test.jsonl'))
             self.examples+=data
             # data = json.load(open('./datasets/dialogue_nli/dnli/dialogue_nli_extra/dialogue_nli_EXTRA_uu_dev.jsonl'))
             # self.examples+=data
