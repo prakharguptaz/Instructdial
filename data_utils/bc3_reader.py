@@ -46,11 +46,11 @@ class BC3Dataset(Dataset):
             data[tag]['labels'] = labels
         self.examples = [x for x in data.values()]
         
-        num_val = len(self.examples) // 10
+        num_eval = len(self.examples) // 10
         self.split = split
 
         if split == 'train':
-            self.examples = self.examples[:-2*num_val]
+            self.examples = self.examples[:-2*num_eval]
         elif split == 'dev':
             self.examples = self.examples[-2*num_eval: -num_eval]
         elif split == 'test':
