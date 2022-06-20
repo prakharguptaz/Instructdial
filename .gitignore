@@ -22,6 +22,8 @@ scripts/wandb/
 datasets/bad/
 datasets/toxichat/
 datasets/me2e/
+datasets/dialoglue/
+datasets/dnli/
 datasets/QMSum/
 datasets/ToD_BERT/
 datasets/__MACOSX/

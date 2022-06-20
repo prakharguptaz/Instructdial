@@ -10,7 +10,7 @@ Instruction tuning is an emergent paradigm in NLP wherein natural language instr
 ### InstructDial Description
 InstructDial contains a collection of dialogue datasets transformed into one or more into dialogue tasks. For every dataset, there exist a bash script in the ```datasets``` folder that downloads and extracts the dataset from open sources, along with a dataset reader script in the ```data_utils``` folder that formats the raw dataset into a format that makes it possible to plug in the dataset into a new task. Each dialogue task (such as keywood based response generation) can use one or more dialogue datasets. The config for each task is specified through a json file (example file ```configs\config_tasks1```). The config file contains the list of datasets included in the task, along with some hyperparameters. Finally, the instances from the tasks are converted into seq2seq format for tuning a language model. This procedure is shown in the figure below. We describe each step in more detail below.
 
-Note: We are open to incorporating new datasets and tasks in this repo on request (through github issues). Otherwise, one can fork this repo and add new tsks in their private repo.
+Note: We are open to incorporating new datasets and tasks in this repo on request (through github issues). Otherwise, one can fork this repo and add new tasks in their private repo.
 
 <img src="/images/instructdialoverview.jpg" width="400" height="450">
 
