@@ -81,7 +81,7 @@ class Generator(GeneratorBasic):
                 else:
                     context_str = (' '+settings.EOT_SEP+' ').join(context[-settings.MAX_CONTEXT_NUMUTTERANCE:]) + " " + settings.EOD_SEP
 
-                post_prompts = ["What should we ask about this conversation?", "A question about this conversation is", "Here is a question realted to the dialogue"]
+                post_prompts = ["What should we ask about this conversation?", "A question about this conversation is", "Here is a question related to the dialogue"]
                 post_prompt = random.choice(post_prompts)
                 context_str = " ".join(context_str.split()[-settings.MAX_DIALOGUE_LENGTH:])
                 # input_text = f" {context_str}. {post_prompt}"
