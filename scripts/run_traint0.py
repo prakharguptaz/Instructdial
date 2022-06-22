@@ -53,7 +53,7 @@ from seq2seq_trainer import CustomSeq2SeqTrainer
 from eval_scripts.generation_metrics import nlgeval_metrics
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
 # check_min_version("4.16.0.dev0")
-os.environ["MASTER_PORT"] = str(10999 +random.randint(1, 999))
+#os.environ["MASTER_PORT"] = str(10999 +random.randint(1, 999))
 
 check_min_version("4.12.0")
 
