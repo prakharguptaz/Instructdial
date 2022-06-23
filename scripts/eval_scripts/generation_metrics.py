@@ -14,7 +14,6 @@ from typing import List
 from tqdm import tqdm
 from tqdm import trange
 # pip install bert_score
-from bert_score import BERTScorer
 from nlgeval import NLGEval
 import tensorflow as tf
 from datasets import load_metric
@@ -85,6 +84,7 @@ def calc_rouge_scores(references, candidates):
     return result
 
 def bert_score(refs: List[str], hyps: List[str]):
+    from bert_score import BERTScorer
     scorer = BERTScorer(lang='en', rescale_with_baseline=True)
     P, R, F1 = scorer.score(hyps, refs)
     return {'BERTScore': F1.tolist()}
