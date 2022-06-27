@@ -383,7 +383,7 @@ def generate_instruction_option_taskdata(instruction_option_sampledata, all_defi
         chosen_incorrect_definitions = random.sample(incorrect_definitions_list, min(len(incorrect_definitions_list), max_definition_options))
         chosen_correct_definition = random.choice(task_definitions)
 
-        all_indices = range(len(chosen_incorrect_definitions))
+        all_indices = range(len(chosen_incorrect_definitions)+1)
         answer_idx = random.choice(all_indices)
         candidates = chosen_incorrect_definitions[:answer_idx] + [chosen_correct_definition] + chosen_incorrect_definitions[answer_idx:]
         assert candidates[answer_idx] == chosen_correct_definition
