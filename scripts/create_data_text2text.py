@@ -607,7 +607,7 @@ def encode_tasks(args):
 
         #select data for instruction_option task
         if args.instruction_option_size!=-1:
-            instruction_option_sampledata+=random.sample(datalist, min(len(datalist),args.instruction_option_size))
+            instruction_option_sampledata = random.sample(datalist, min(len(datalist),args.instruction_option_size))
         #select data for instruction_binary task
         if args.instruction_binary_size!=-1:
             instruction_binary_sampledata = random.sample(datalist, min(len(datalist),args.instruction_binary_size))
