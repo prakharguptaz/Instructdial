@@ -607,10 +607,10 @@ def encode_tasks(args):
 
         #select data for instruction_option task
         if args.instruction_option_size!=-1:
-            instruction_option_sampledata = random.sample(datalist, min(len(datalist),args.instruction_option_size))
+            instruction_option_sampledata+= random.sample(datalist, min(len(datalist),args.instruction_option_size))
         #select data for instruction_binary task
         if args.instruction_binary_size!=-1:
-            instruction_binary_sampledata = random.sample(datalist, min(len(datalist),args.instruction_binary_size))
+            instruction_binary_sampledata+= random.sample(datalist, min(len(datalist),args.instruction_binary_size))
             
         all_data+=datalist
         print(task, " with number of datapoints:", len(datalist))
@@ -636,10 +636,12 @@ def encode_tasks(args):
         print('Sampled Length of all data:', len(all_data))
 
     if args.instruction_option_size>-1 and args.no_instr is False:
+        instruction_option_sampledata = random.sample(instruction_option_sampledata, min(len(instruction_option_sampledata),args.instruction_option_size))
         new_instruction_task_data = generate_instruction_option_taskdata(instruction_option_sampledata, all_definitions, no_instr=args.no_instr, no_option=args.no_option)
         all_data+=new_instruction_task_data
         print('instruction option task data len', len(new_instruction_task_data))
     if args.instruction_binary_size>-1 and args.no_instr is False:
+        instruction_binary_sampledata = random.sample(instruction_binary_sampledata, min(len(instruction_binary_sampledata),args.instruction_binary_size))
         new_instruction_task_data = generate_instruction_binary_taskdata(instruction_binary_sampledata, all_definitions, no_instr=args.no_instr, no_option=args.no_option)
         all_data+=new_instruction_task_data
         print('instruction binary task data len', len(new_instruction_task_data))
