@@ -535,6 +535,7 @@ def encode_tasks(args):
     all_data = []
     all_definitions = {}
     instruction_option_sampledata = []
+    instruction_binary_sampledata = []
     
     with open('task-data-configs.txt', 'a') as f:
         json.dump(config, f)
