@@ -110,6 +110,9 @@ For training a T0-3B type model (needs machines with two GPUs, both greater than
 bash scripts/train-idt0.sh
 ```
 
+## Link to download models
+We provide Dial-Bart0 and Dial-t0 models tuned on all tasks in the repository (as of June 10 2022) on [Google drive](https://drive.google.com/drive/folders/1u2WUIM9KShaZqHbQWVpPA7igkeG1WHof?usp=sharing)
+
 ## Generate model outputs and save to file
 ```bash
 python run_generate.py --output_prefix PREFIX_FORFILE --input_file INPUT_FILE --model CHECKPOINT --batch_size 10
@@ -141,5 +144,6 @@ Please read the README in the folder ```scripts/eval_scripts/instr_data/``` to u
 **Note** that you can change the formatting used for seq2seq data preparation by changing variables in the constants.py and utils folder.
 
 
+
 ## To-do
-Will soon release a model trained on all tasks and some prepared training data
+Will soon release a model on huggingface
