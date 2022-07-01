@@ -115,7 +115,7 @@ The data in the seq2seq train, valid and test files contains the following field
 "index": "Required field. Instance number",
 "classes_in_options": "Optional field. Names of the classes for classfication", 
 "candidates": "Optional field. Names of the classes for classfication":
-"metadata" : "Required dictionary. It contains the fields that are not used during training, but can be used for eval. It conatins fields such as 'context', 'response', 'intent', 'acts', 'classes_in_options', 'candidates', 'action', 'sys_act', 'condition_response_str', 'chosen_transform', 'emotion', 'endswith', 'document', 'missing_response', 'swapped_response', 'graph', 'keywords', 'persona', 'strategy', 'slot_label', 'target'",
+"metadata" : "Optional dictionary. It contains the fields that are not used during training, but can be used for eval. It conatins fields such as 'context', 'response', 'intent', 'acts', 'classes_in_options', 'candidates', 'action', 'sys_act', 'condition_response_str', 'chosen_transform', 'emotion', 'endswith', 'document', 'missing_response', 'swapped_response', 'graph', 'keywords', 'persona', 'strategy', 'slot_label', 'target'",
 }
 ```
 
@@ -136,7 +136,7 @@ For training a T0-3B type model (needs machines with two GPUs, both greater than
 bash scripts/train-idt0.sh
 ```
 
-**Note:** The model_name_or_path field in thbe train scripts above should be set to the model name or location that you want to fine tune.
+**Note:** The model_name_or_path field in tbe train scripts above should be set to the model name or location that you want to fine tune.
 
 ## Link to download models
 We provide Dial-Bart0 and Dial-t0 models tuned on all tasks in the repository (as of June 10 2022) on [Google drive](https://drive.google.com/drive/folders/1u2WUIM9KShaZqHbQWVpPA7igkeG1WHof?usp=sharing)
