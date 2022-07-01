@@ -12,7 +12,7 @@ InstructDial contains a collection of dialogue datasets transformed into one or 
 
 Note: We are open to incorporating new datasets and tasks in this repo on request (through github issues). Otherwise, one can fork this repo and add new tasks in their private repo.
 
-<img src="/images/instructdialoverview.jpg" width="400" height="450">
+<img src="/images/instructdialoverview.jpg" width="600" height="450">
 
 
 
@@ -119,7 +119,7 @@ The data in the seq2seq train, valid and test files contains the following field
 }
 ```
 
-One can use the scripts.create_data_text2text script to create a common train file that contains data from multiple tasks formatted u iformaly with above keys. If you only want to finetune a model on a single task, you can create that data with your own script (but ensure that the data genrated contains the field marked required above.) 
+One can use the scripts.create_data_text2text script to create a common train file that contains data from multiple tasks formatted uniformaly with above keys. If you only want to finetune a model on a single task, you can create that data with your own script (but ensure that the data generated contains the field marked required above.) 
 
 
 ## Training model using the seq2seq files
