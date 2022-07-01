@@ -54,12 +54,16 @@ For generating training datasets
 ```
 python -m scripts.create_data_text2text --outputfile scripts/text2textfiles/$OUTFILE --configfile configs/$SEQ2SEQ_TASK_CONFIG --tasksfiles_folder tasks_files/$TASK_FOLDER/  --max_task_size $NUMBER --max_data $MAX_DATA  --none_of_above_prob $PROBN --instruction_option_size $NUMBER --instruction_binary_size $NUMBER
 ```
-For this example command you can use ```$OUTFILE=sample_seqfile.json  $SEQ2SEQ_TASK_CONFIG=sample_experiment.json $TASK_FOLDER=tasks_files/tasks_files-full-trainconfig1/ $PROBN=0.1``` For each instance, the input is saved in the prompt field and output in all_outputs field.
+For this example command you can use ```$OUTFILE=sample_seqfile.json  $SEQ2SEQ_TASK_CONFIG=sample_experiment.json $TASK_FOLDER=tasks_files/tasks_files-full-trainconfig1/ $PROBN=0.1``` 
+
+
+
 
 For generating test datasets (no meta and nota data is created)
 ```
 python -m scripts.create_data_text2text --outputfile scripts/text2textfiles/$OUTFILE --configfile configs/$SEQ2SEQ_TASK_CONFIG --tasksfiles_folder tasks_files/$TASK_FOLDER/  --max_task_size $NUMBER --max_data $MAX_DATA --instruction_option_size -1 --instruction_binary_size -1
 ```
+
 
 Description of keys and values in a seq2seq config file 
 
@@ -96,6 +100,28 @@ Description of keys and values in a seq2seq config file
 }
 ```
 
+
+The data in the seq2seq train, valid and test files contains the following fields:
+```js
+{
+"prompt": "Required field. This field contains the input instance + the instruction for each instance. This is the field fed as input to the model.", 
+"input": "This optional field contains only the input instance + post prompt formatted into a sequence, and is not required necessarily",
+"text": "Optional field, generally empty",
+"output": "Required field. The target output of the instance in string format, used in training",
+"all_outputs": "Required field. List of references for target. Used during eval.",
+"split": "Optional field. train/valid/test",
+"dataset": "Required field. Name of the dataset",
+"task": "Required field. Name of the task",
+"index": "Required field. Instance number",
+"classes_in_options": "Optional field. Names of the classes for classfication", 
+"candidates": "Optional field. Names of the classes for classfication":
+"metadata" : "Required dictionary. It contains the fields that are not used during training, but can be used for eval. It conatins fields such as 'context', 'response', 'intent', 'acts', 'classes_in_options', 'candidates', 'action', 'sys_act', 'condition_response_str', 'chosen_transform', 'emotion', 'endswith', 'document', 'missing_response', 'swapped_response', 'graph', 'keywords', 'persona', 'strategy', 'slot_label', 'target'",
+}
+```
+
+One can use the scripts.create_data_text2text script to create a common train file that contains data from multiple tasks formatted u iformaly with above keys. If you only want to finetune a model on a single task, you can create that data with your own script (but ensure that the data genrated contains the field marked required above.) 
+
+
 ## Training model using the seq2seq files
 Following scipts need the latest version of deepspeed to run.
 Set the train and validation files in the bash file below
@@ -109,6 +135,8 @@ For training a T0-3B type model (needs machines with two GPUs, both greater than
 ```bash
 bash scripts/train-idt0.sh
 ```
+
+**Note:** The model_name_or_path field in thbe train scripts above should be set to the model name or location that you want to fine tune.
 
 ## Link to download models
 We provide Dial-Bart0 and Dial-t0 models tuned on all tasks in the repository (as of June 10 2022) on [Google drive](https://drive.google.com/drive/folders/1u2WUIM9KShaZqHbQWVpPA7igkeG1WHof?usp=sharing)
