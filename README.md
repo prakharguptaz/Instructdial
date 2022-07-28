@@ -141,6 +141,29 @@ bash scripts/train-idt0.sh
 ## Link to download models
 We provide Dial-Bart0 and Dial-t0 models tuned on all tasks in the repository (as of June 10 2022) on [Google drive](https://drive.google.com/drive/folders/1u2WUIM9KShaZqHbQWVpPA7igkeG1WHof?usp=sharing)
 
+## Fine-tuning pretrained models on a new task
+To fine-tune the Dial-Bart0 and Dial-T0 models on a new task or dataset, you just need to format your dataset in a format similar to waht we have used for existing tasks.
+A standard formatted input is formatted as following:
+
+**Instruction:** instruction statement **\nInput:** *[OPTIONAL INPUT FIELD]* optional input text **[CONTEXT]** turn1 **[ENDOFTURN]** turn 2 [ENDOFTURN] last turn **[ENDOFDIALOGUE]** *[OPTIONS]* class1||||class2 **[QUESTION]** Final prompt
+
+Here the bolded and italicized text are used to format the input data. The token [CONTEXT] signals the start of dialogue content. Dialogue turns are separated by [ENDOFTURN] and the end of the dialogue is marked with [ENDOFDIALOGUE]. The token [QUESTION] marks the start of the prompt text. [OPTIONS] is optionally used to amrk the start of classes for classification tasks. [RESPONSE] is optionally used when some operation such as intent detection needs to be applied to only a specific turn.
+
+Sample inputs for intent detection and keyword based generation:
+```bash
+Instruction: Select the correct intent for the response... \nInput: [CONTEXT] turn 1 [ENDOFTURN] turn 2 [RESPONSE] final turn to be classified [ENDOFDIALOGUE] The possible intents are: [OPTIONS] flight status||||smart home||||otheroptions... [QUESTION]. What is the intent for the response
+
+Instruction: In this task ... Generate a response using the provided keywords.\nInput: [KEYWORDS] influence, oceans, climate [CONTEXT] Do you know about the Himalayas? [ENDOFTURN] They have the highest peaks in the world . [ENDOFDIALOGUE] [QUESTION] Given this context generate a response which has the provided keywords
+```
+
+
+You can use the following bash command to fine-tune the pretrained models:
+```bash
+bash scripts/tune-idb0.sh
+
+bash scripts/tune-idt0.sh
+```
+
 ## Generate model outputs and save to file
 ```bash
 python run_generate.py --output_prefix PREFIX_FORFILE --input_file INPUT_FILE --model CHECKPOINT --batch_size 10
@@ -151,6 +174,7 @@ Run this script for probability generation for ```yes``` token for the dialogue 
 ```bash
 python run_prob_generate.py --output_prefix PREFIX_FORFILE --input_file INPUT_FILE --model CHECKPOINT --batch_size 10
 ```
+
 
 ## Running eval on model outputs and save to file (output to same location after appending _metrics to file name )
 ```
