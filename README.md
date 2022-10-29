@@ -163,11 +163,22 @@ A standard formatted input is formatted as following:
 
 Here the bolded and italicized text are used to format the input data. The token [CONTEXT] signals the start of dialogue content. Dialogue turns are separated by [ENDOFTURN] and the end of the dialogue is marked with [ENDOFDIALOGUE]. The token [QUESTION] marks the start of the prompt text. [OPTIONS] is optionally used to amrk the start of classes for classification tasks. [RESPONSE] is optionally used when some operation such as intent detection needs to be applied to only a specific turn.
 
-Sample inputs for intent detection and keyword based generation:
+Sample inputs for intent detection, keyword based generation and other tasks are here:
 ```bash
-Instruction: Select the correct intent for the response... \nInput: [CONTEXT] turn 1 [ENDOFTURN] turn 2 [RESPONSE] final turn to be classified [ENDOFDIALOGUE] The possible intents are: [OPTIONS] flight status||||smart home||||otheroptions... [QUESTION]. What is the intent for the response
+Instruction: Edit the provided response into a response that is fluent and coherent to the dialogue context. \n\nInput: [CONTEXT] How may I help you? [ENDOFTURN] I left a suitcase on the train to London the other day. [RESPONSE] Can describe itit , sir ? It will help us find [ENDOFDIALOGUE] [QUESTION] Given this context and response provided, the edited response is
 
-Instruction: In this task ... Generate a response using the provided keywords.\nInput: [KEYWORDS] influence, oceans, climate [CONTEXT] Do you know about the Himalayas? [ENDOFTURN] They have the highest peaks in the world . [ENDOFDIALOGUE] [QUESTION] Given this context generate a response which has the provided keywords
+Instruction: Generate a response that starts with the provided initial phrase. \n\nInput: [INITIAL_PHRASE] Please describe [CONTEXT] How may I help you? [ENDOFTURN] I left a suitcase on the train to London the other day. [ENDOFDIALOGUE] [QUESTION] A response with the provided initial phrase is
+
+Instruction: Generate a response that starts with the provided initial phrase and contains the provided keywords. \n\nInput: [INITIAL PHRASE] Please describe [KEYWORDS] color, any documents [CONTEXT] How may I help you? [ENDOFTURN] I left a suitcase on the train to London the other day. [ENDOFDIALOGUE] [QUESTION] A response with the provided initial phrase and keywords is
+
+Instruction: What is the intent of the response \n\nInput: [CONTEXT] How may I help you? [RESPONSE] I left a suitcase on the train to London the other day. [ENDOFDIALOGUE] [OPTIONS] booking, reservation change, checkout, lost&found, time information, security, schedules [QUESTION] The intent of the response is
+
+Instruction: Generate a summary for the following dialog context. \n\nInput: [CONTEXT] Ann: Wanna go out? [ENDOFTURN] Kate: Not really, I feel sick. [ENDOFTURN] Ann: Drink mint tea, they say it helps. Ok, so we'll meet up another time. Take care! [ENDOFTURN] Kate: Thanks! [ENDOFDIALOGUE] [QUESTION] For this dialogue, the summary is:
+
+Instruction: Consider the context of the conversation and a document and generate an answer accordingly \n\nInput:  [CONTEXT] How may I help you? [ENDOFTURN] I left a suitcase on the train to London the other day. [ENDOFDIALOGUE] [QUESTION] What is the response of the following question: Where was the person going to?
+
+Instruction: Generate a response using the provided background knowledge. \n\nInput: [KNOWLEDGE] Emailid for cases related to lost and found is x@gmail.com [CONTEXT] How may I help you? [ENDOFTURN] I left a suitcase on the train to London the other day. [ENDOFDIALOGUE] [QUESTION] Generate a response using the information from the background knowledge.
+
 ```
 
 
