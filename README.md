@@ -153,7 +153,7 @@ bash scripts/train-idt0.sh
 **Note:** The model_name_or_path field in tbe train scripts above should be set to the model name or location that you want to fine tune.
 
 ## Link to download models
-We provide [DIAL-BART0](https://huggingface.co/prakharz/DIAL_BART0) and [DIAL-T0](https://huggingface.co/prakharz/DIAL_T0) models tuned on all tasks on hugginface, and also in the repository (as of June 10 2022) on [Google drive](https://drive.google.com/drive/folders/1u2WUIM9KShaZqHbQWVpPA7igkeG1WHof?usp=sharing)
+We provide [DIAL-FLANT5-XL](https://huggingface.co/prakharz/DIAL-FLANT5-XL), [DIAL-BART0](https://huggingface.co/prakharz/DIAL_BART0) and [DIAL-T0](https://huggingface.co/prakharz/DIAL_T0) models on hugginface which are tuned on all tasks in the repository (as of June 10 2022). Models used for experiments in the paper in Table 1 (with about 3 train tasks) are present on [Google drive](https://drive.google.com/drive/folders/1u2WUIM9KShaZqHbQWVpPA7igkeG1WHof?usp=sharing)
 
 ## Fine-tuning pretrained models on a new task
 To fine-tune the Dial-Bart0 and Dial-T0 models on a new task or dataset, you just need to format your dataset in a format similar to waht we have used for existing tasks.
