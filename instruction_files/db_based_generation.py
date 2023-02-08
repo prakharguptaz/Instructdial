@@ -106,7 +106,7 @@ class Generator(GeneratorBasic):
                     action_string = 'no annotation'
                 action_string = action_string.replace(', .', '.')
  
-                text = settings.ACT_SEP  + action_string+ " " +   settings.CONTEXT_SEP + " " + context_str + " " + settings.EOT_SEP + " " + \
+                text = settings.ACT_SEP  + action_string+ " " +   settings.CONTEXT_SEP + " " + context_str + " " + settings.EOD_SEP + " " + \
                        random.choice(post_prompts)
 
                 output = dp['response']
